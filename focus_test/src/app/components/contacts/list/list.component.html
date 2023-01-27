@@ -1,0 +1,50 @@
+
+     <h1> <mat-icon>list</mat-icon> Contacts list </h1>
+     
+     <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20, 100]"
+        showFirstLastButtons
+        aria-label="Cantidad de registros a mostrar">
+      </mat-paginator>
+
+      <mat-form-field appearance="legacy" class="input_search">
+        <mat-label>Search data: </mat-label>
+        <input  matInput type="text" [(ngModel)]="texto"  placeholder="Search data..." autocomplete="off" (ngModelChange)="filter_table($event)">
+      </mat-form-field>
+
+      <table mat-table [dataSource]="data">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let row"> {{row.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="first_name">
+          <th mat-header-cell *matHeaderCellDef> Firstname</th>
+          <td mat-cell *matCellDef="let row" class="cli">{{row.first_name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="last_name">
+          <th mat-header-cell *matHeaderCellDef> Lastname </th>
+          <td mat-cell *matCellDef="let row"> {{row.last_name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="invoice_rate">
+          <th mat-header-cell *matHeaderCellDef> Invoice rate </th>
+          <td mat-cell *matCellDef="let row"> {{row.invoice_rate}} </td>
+        </ng-container>
+
+       
+        <ng-container matColumnDef="Acciones">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let row">
+          
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>

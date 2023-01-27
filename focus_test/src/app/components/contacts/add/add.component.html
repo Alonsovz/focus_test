@@ -1,0 +1,26 @@
+<h1> <mat-icon>add</mat-icon>  Add new contact </h1>
+<form [formGroup]="add_contact_form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Firstname</mat-label>
+        <input matInput placeholder="Firstname..." formControlName="first_name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Lastname</mat-label>
+        <input matInput placeholder="Lastname..." formControlName="last_name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email..." formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Invoice rate</mat-label>
+        <input matInput placeholder="Invoice rate..."  formControlName="invoice_rate">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary"><mat-icon>save</mat-icon> Save information</button>
+
+    <button mat-raised-button color="basic" (click)="reset_form()"> <mat-icon>cancel</mat-icon> Cancel</button>
+</form>

@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%;
+    background-color: #212121 !important;
+    color: white !important;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+table {
+    width: 100%;
+    margin-top: 2%!important;
+  }
+  
+  mat-paginator{
+    float: left !important;
+    margin-left: 5% !important;
+  }
+  
+  .input_search{
+    margin-left: 5% !important;
+    width: 40% !important;
+  }
+
+  h1{
+    text-align: center !important;
+    color: white !important;
+    font-weight: bold !important;
+  }
+
+  th{
+    text-align: center !important;
+  }
